@@ -1,0 +1,68 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  background: black !important; /* force le noir et supprime toute image de styles.css */
+  color: white;
+  font-family: 'Octuple Max', sans-serif;
+}
+
+header {
+  text-align: center;
+  padding: 40px 0;
+}
+
+header h1 {
+  font-size: 48px;
+  color: #ff5fa2;
+  margin: 0;
+}
+
+.gallery-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+  padding: 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.gallery-item img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 12px;
+  box-shadow: 0 0 20px rgba(255, 95, 162, 0.6);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.gallery-item img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 30px rgba(255, 95, 162, 0.9);
+}
+
+footer {
+  text-align: center;
+  padding: 20px;
+  color: white;
+  background-color: #111;
+}
+@charset "UTF-8";
+/* CSS Document */
+
+/* Images plus grandes (moitié de page) */
+/* Ligne des deux grandes images */
+.full-row {
+  grid-column: 1 / -1; /* prend toute la largeur */
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* 2 colonnes égales */
+  gap: 20px;
+}
+
+
+/* Décale tout le contenu principal */
+header,
+.gallery-container,
+footer {
+  margin-left: 220px;
+}
+

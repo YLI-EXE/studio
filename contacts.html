@@ -1,0 +1,59 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Contactez-nous</title>
+
+<!-- Main CSS -->
+<link rel="stylesheet" type="text/css" href="css/styles.css">
+
+<!-- Contact page CSS -->
+<link rel="stylesheet" type="text/css" href="css/contact css.css">
+</head>
+
+<body class="contact-page">
+
+<header>
+    <p>Entrer dans l'univers d'Yli</p>
+</header>
+
+<!-- Menu -->
+<nav class="menu-vertical">
+  <ul>
+    <li><a href="index.html">news</a></li>
+    <li><a href="news.html">intro</a></li>
+    <li><a href="contacts.html">cv</a></li>
+    <li class="dropdown cyber">
+      <div class="dropdown-toggle"><span class="angel-icon">✧</span> work</div>
+      <ul class="submenu">
+        <li><a href="ania.html">Ania</a></li>
+        <li><a href="leo.html">Leonardo</a></li>
+        <li><a href="work/autre.html">AutrePage</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+<!-- Marquee -->
+<marquee style="max-width:500px;" scrollamount="3" scrolldelay="5" direction="left" onmouseover="this.stop()" onmouseout="this.start()">
+Vous pouvez me contacter à l'adresse suivante : ilinca....@
+</marquee>
+
+<!-- CV image -->
+<img class="curriculum" src="img/CV ilinca Parii chef de projet crm pour site.jpg" alt="CV Yli">
+
+<!-- Additional image -->
+<img src="img/liz taylor.png" alt="Liz Taylor" class="left-image">
+
+<!-- Dropdown menu JS -->
+<script>
+document.querySelectorAll(".cyber > .dropdown-toggle").forEach(function(toggle) {
+  toggle.addEventListener("click", function(e) {
+    e.preventDefault();
+    this.parentElement.classList.toggle("active"); // active on the li parent
+  });
+});
+</script>
+
+</body>
+</html>

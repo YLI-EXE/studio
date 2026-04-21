@@ -726,11 +726,12 @@ div#content div.rightbox{
 }
 
 /* movement rotate burger  */	
-.burger.active {
-  transform: rotate(180deg) scale(1.1);
+.burger.active:hover {
+  transform: rotate(180deg) scale(1.2);
   color: #00ccff;
   text-shadow: 0 0 10px #00ccff;
 }
+
 	
   .menu-vertical {
     left: auto;
@@ -776,7 +777,11 @@ div#content div.rightbox{
   box-shadow: -10px 0 40px rgba(0, 204, 255, 0.6);
 }
 
-
+.burger.active {
+  transform: rotate(180deg) scale(1.1);
+  color: #00ccff;
+  text-shadow: 0 0 10px #00ccff;
+}
 
  /* STEP 1 MOBILE Adaptation for images  */
 img {

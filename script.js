@@ -45,10 +45,4 @@ function update(e) {
   target = Math.max(0, Math.min(100, target));
 }
 
-/* faire tourner le menu burger  */
 
-burger.addEventListener("click", () => {
-  menu.classList.toggle("active");
-  overlay.classList.toggle("active");
-  burger.classList.toggle("active"); // 👈 AJOUT
-});

@@ -47,8 +47,18 @@ function update(e) {
 
 /* faire tourner le menu burger  */
 
-burger.addEventListener("click", () => {
-  menu.classList.toggle("active");
-  overlay.classList.toggle("active");
-  burger.classList.toggle("active"); // 👈 AJOUT
+document.addEventListener("DOMContentLoaded", () => {
+
+  const burger = document.querySelector(".burger");
+  const menu = document.querySelector(".menu-vertical");
+  const overlay = document.querySelector(".menu-overlay");
+
+  if (!burger || !menu || !overlay) return;
+
+  burger.addEventListener("click", () => {
+    menu.classList.toggle("active");
+    overlay.classList.toggle("active");
+    burger.classList.toggle("active");
+  });
+
 });

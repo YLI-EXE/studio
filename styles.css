@@ -302,6 +302,14 @@ div#content div.rightbox{
   }
 }
 
+/* News image apres zebra */
+
+.news-image {
+  display: block;
+  margin: 40px auto; /* espace au-dessus et dessous */
+  max-width: 80%;
+}
+
 /* sÃ©parateur contenu */
 .separator-y2k {
   width: 70%;

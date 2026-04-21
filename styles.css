@@ -874,23 +874,9 @@ body {
 
 /* GIF HEADER PORTFLIO MOBILE */
 
-.hero {
-  background-image: url("incubator visuel pour mobile.GIF");
-  background-size: cover;
-  background-position: center;
-}
+content: url(incubator visuel pour mobile.GIF);
 
-/* MOBILE */
-@media screen and (max-width: 768px) {
-  .hero {
-    background-image: url("ton-gif.gif");
-  }
-}
 
-.hero {
-  background-size: cover;
-  background-repeat: no-repeat;
-}
 /* GIF HEADER PORTFLIO MOBILE FIN */
 
 /* backgorund pour photo header */

@@ -6,15 +6,21 @@
 
 /* ===== Menu vertical principal ===== */
 .menu-vertical {
-  list-style: none;
-  padding: 0;
-  margin: 0;
+  position: fixed;
+  top: 0;
+  left: 0;
+
+  height: 100vh;
   width: 200px;
+
+  background-color: transparent;
+  padding-top: 20px;
+  z-index: 1000;
 }
 
 /* Parent menu Poetry */
 .menu-vertical .cyber > .dropdown-toggle {
-  display: flex;              /* pour aligner étoile et texte */
+  display: flex;              /* pour aligner Ã©toile et texte */
   align-items: center;        /* centre verticalement */
   width: 100%;                /* prend toute la largeur du menu */
   padding: 12px 20px;         
@@ -29,7 +35,7 @@
   transition: all 0.3s ease;
 }
 
-/* Étoile avant le texte */
+/* Ã‰toile avant le texte */
 .menu-vertical .cyber > .dropdown-toggle .angel-icon {
   margin-right: 10px;
   transition: transform 0.4s ease, opacity 0.3s ease;
@@ -44,25 +50,25 @@
 
 /* Texte du menu */
 .menu-vertical .cyber > .dropdown-toggle .menu-text {
-  margin-left: 10px;           /* espace entre l'étoile et le texte */
+  margin-left: 10px;           /* espace entre l'Ã©toile et le texte */
 }
 
-/* Icône ✧ à gauche */
+/* IcÃ´ne âœ§ Ã  gauche */
 .menu-vertical .cyber > .dropdown-toggle .angel-icon {
   display: inline-block;
   transition: transform 0.4s ease;
   color: red;
 }
 
-/* Rotation de l'étoile quand le sous-menu est actif */
+/* Rotation de l'Ã©toile quand le sous-menu est actif */
 .menu-vertical .cyber.active > .dropdown-toggle .angel-icon {
   transform: rotate(180deg);
-  color: blue;                 /* couleur différente si ouvert */
+  color: blue;                 /* couleur diffÃ©rente si ouvert */
 }
 
 /* Effet visuel au survol pour indiquer un sous-menu */
 .menu-vertical .cyber > .dropdown-toggle:hover {
-  background-color: white;     /* même effet que sur les autres liens */
+  background-color: white;     /* mÃªme effet que sur les autres liens */
   color: black;
 }
 
@@ -75,10 +81,13 @@
   overflow: hidden;
   opacity: 0;
   transform: translateY(-10px);
-  transition: all 0.5s ease;
+  transition: 
+  max-height 0.5s ease,
+  opacity 0.3s ease,
+  transform 0.3s ease;
 }
 
-/* Quand actif, le sous-menu s’ouvre */
+/* Quand actif, le sous-menu sâ€™ouvre */
 .cyber.active > .submenu {
   max-height: 500px;
   opacity: 1;
@@ -112,7 +121,7 @@
 /* ===== SUBMENU POETRY - FIN ===== */
 
 
-/* S'assure que le menu reste vertical à gauche */
+/* S'assure que le menu reste vertical Ã  gauche */
 .menu-vertical ul {
   display: flex;
   flex-direction: column; /* menu vertical */
@@ -120,29 +129,16 @@
 
 /* Sous-menu doit s'aligner sous le parent vertical */
 .menu-vertical .submenu {
-  position: relative;      /* pas en absolute pour ne pas se décaler */
+  position: relative;      /* pas en absolute pour ne pas se dÃ©caler */
   margin-left: 0;
 }
 
 
 .cyber .submenu {
-  width: 200px;           /* même largeur que menu */
+  width: 200px;           /* mÃªme largeur que menu */
   margin-left: 0;
 }
 
-
-
-/* Menu vertical fixe à gauche */
-.menu-vertical {
-  position: fixed;   
-  top: 0;
-  left: 0;
-  height: 100vh;     
-  width: 200px;      
-  background-color: transparent; /* menu totalement transparent */
-  padding-top: 20px;
-  z-index: 1000;     
-}
 
 /* Liste verticale */
 .menu-vertical ul {
@@ -159,17 +155,11 @@
   font-weight: bold;                  /* texte en gras */
   text-decoration: none;
   padding: 12px 20px;
-  font-size: 36px;                   /* double taille pour être visible */
-  text-shadow: 3px 3px 6px blue;     /* ombre bleue plus prononcée */
+  font-size: 36px;                   /* double taille pour Ãªtre visible */
+  text-shadow: 3px 3px 6px blue;     /* ombre bleue plus prononcÃ©e */
   background-color: transparent;      /* fond transparent */
   transition: all 0.3s;      
 
-}
-
-/* Effet sur hover */
-.menu-vertical li a:hover {
-  background-color: black; /* fond noir au survol */
-  color: white;            /* texte blanc sur fond noir */
 }
 
 
@@ -193,7 +183,7 @@ font-size: 30px}
 
 nav.menu-nav ul li.btn:hover a{color: darkblue;
 background-color: white;
-transition: 0.3s;all;}
+transition: all 0.3s;}
 
 
 header{background-color: black;}
@@ -237,7 +227,11 @@ div#content div{display: inline-block;
 width: 48%;}
 
 
-div#content div h1, p, iframe{margin 35px;}
+div#content div h1,
+div#content div p,
+div#content div iframe {
+  margin: 35px;
+}
 
 div#content div.leftbox{
 	background-color: yellow;
@@ -298,17 +292,17 @@ div#content div.rightbox{
   animation: swim-right-left 20s linear infinite;
 }
 
-/* animation droite → gauche */
+/* animation droite â†’ gauche */
 @keyframes swim-right-left {
   0% {
-    transform: translateX(110vw); /* commence hors écran à droite */
+    transform: translateX(110vw); /* commence hors Ã©cran Ã  droite */
   }
   100% {
-    transform: translateX(-200px); /* sort à gauche */
+    transform: translateX(-200px); /* sort Ã  gauche */
   }
 }
 
-/* séparateur contenu */
+/* sÃ©parateur contenu */
 .separator-y2k {
   width: 70%;
   height: 4px;
@@ -339,14 +333,14 @@ div#content div.rightbox{
   text-align: right;
 }
 
-/* Container centré absolu */
+/* Container centrÃ© absolu */
 .cover-section {
   display: flex;
   flex-direction: column;
-  align-items: center;      /* centre horizontalement tous les éléments */
+  align-items: center;      /* centre horizontalement tous les Ã©lÃ©ments */
   justify-content: flex-start;
   text-align: center;       /* centre le texte */
-  margin: 80px auto;        /* centre la section entière */
+  margin: 80px auto;        /* centre la section entiÃ¨re */
   width: 100%;
   max-width: 900px;         /* limite la largeur totale */
   box-sizing: border-box;
@@ -363,30 +357,21 @@ div#content div.rightbox{
   width: 100%;
 }
 
-/* Image centrée */
-.cover-image {
-  display: block;           /* important pour le centrage */
-  max-width: 100%;          /* responsive */
-  height: auto;
-  border-radius: 16px;
-  box-shadow: 
-    0 0 20px rgba(0, 153, 255, 0.6),
-    0 10px 30px rgba(0, 0, 0, 0.4);
-  margin: 0 auto 30px auto; /* centre horizontalement + espace dessous */
-}
+/* Image centrÃ©e */
+
 .cover-image {
   display: block;           
-  max-width: 52.5%; /* avant c’était 70%, réduit d’environ 25% */
+  max-width: 52.5%; /* avant câ€™Ã©tait 70%, rÃ©duit dâ€™environ 25% */
   height: auto;
   border-radius: 16px;
   box-shadow: 
     0 0 20px rgba(0, 153, 255, 0.6),
     0 10px 30px rgba(0, 0, 0, 0.4);
-  margin: 0 auto 30px auto; /* reste centré */
+  margin: 0 auto 30px auto; /* reste centrÃ© */
 }
 
 
-/* Texte détaillé en dessous */
+/* Texte dÃ©taillÃ© en dessous */
 .cover-text {
   width: 100%;
   max-width: 800px;         /* largeur confortable */
@@ -396,10 +381,10 @@ div#content div.rightbox{
   font-size: 16px;
   color: #fff;
   line-height: 1.6;
-  padding: 0 20px;          /* pour petits écrans */
+  padding: 0 20px;          /* pour petits Ã©crans */
 }
 
-/* Séparation entre les articles */
+/* SÃ©paration entre les articles */
 .cover-section {
   padding-bottom: 60px;
   border-bottom: 1px solid rgba(255,255,255,0.1);
@@ -414,7 +399,7 @@ div#content div.rightbox{
 /* ==== 4 March images row with neon / Y2K vibe ==== */
 /* March slider container */
 
-/*STEP 1 — FIX MAIN CONTAINER */
+/*STEP 1 â€” FIX MAIN CONTAINER */
 .march-slider {
   width: 100%;
   max-width: 700px;
@@ -433,13 +418,13 @@ div#content div.rightbox{
   justify-content: center;
 }
 
-/* STEP 3 — MAKE TRACK RESPONSIVE */
+/* STEP 3 â€” MAKE TRACK RESPONSIVE */
 .slider-track {
   display: flex;
   transition: transform 0.4s ease;
 }
 
-/* STEP 4 — FIX IMAGES INSIDE SLIDER */
+/* STEP 4 â€” FIX IMAGES INSIDE SLIDER */
 
 .march-image {
   width: 100%;
@@ -448,19 +433,7 @@ div#content div.rightbox{
   flex-shrink: 0;
 }
 
-/*STEP 5 — MOBILE FIX (IMPORTANT)*/
-@media (max-width: 768px) {
 
-  .march-slider {
-    width: 100%;
-    padding: 0 10px;
-  }
-
-  .slider-btn {
-    font-size: 24px;
-  }
-
-}
 /*--------------FIN MOBILE RESPONSIVE---------*/
 
 /* slider viewport */
@@ -541,7 +514,7 @@ div#content div.rightbox{
 }
 /* ==== 4 March images row with neon / Y2K vibe ==== FIN*/
 
-/* galerie spécifique à l'article 6 March shooting leo BMTH */
+/* galerie spÃ©cifique Ã  l'article 6 March shooting leo BMTH */
 
 .march-photos{
   display:grid;
@@ -562,9 +535,9 @@ div#content div.rightbox{
 .march-photos .big-photo{
   grid-row: span 3;
 }
-/* effets ✨ zoom
-✨ glow cyber
-✨ image qui se soulève */
+/* effets âœ¨ zoom
+âœ¨ glow cyber
+âœ¨ image qui se soulÃ¨ve */
 
 .march-photos img{
   width:100%;
@@ -579,7 +552,7 @@ div#content div.rightbox{
   box-shadow: 0 0 25px rgba(0,204,255,0.7);
 }
 
-/* galerie spécifique à l'article 6 March shooting leo BMTH FIN */
+/* galerie spÃ©cifique Ã  l'article 6 March shooting leo BMTH FIN */
 
 /* === Punk / Hardcore post 19 march === */
 
@@ -725,60 +698,22 @@ div#content div.rightbox{
   display: none;
 }
 
-/* 📱 MOBILE MODE */
+
+ /* MOBILE responsive burger uniquement */
+/* ===== MOBILE BURGER ===== */
 @media (max-width: 768px) {
 
-  /* ✨ burger visible */
-  .burger {
-    display: block;
-    position: fixed;
-    top: 20px;
-    right: 20px;
-    font-size: 45px;
-    color: #00ccff;
-    z-index: 3000;
-    cursor: pointer;
-    text-shadow:
-      0 0 5px #00ccff,
-      0 0 10px #00ccff,
-      0 0 20px #00ccff;
-    transition: transform 0.3s ease;
-  }
-
-  .burger:hover {
-    transform: scale(1.2) rotate(10deg);
-  }
-
-  /* 🌌 overlay background */
-  .menu-overlay {
-    display: block;
-    position: fixed;
-    inset: 0;
-    background: rgba(0,0,0,0.6);
-    backdrop-filter: blur(6px);
-    opacity: 0;
-    pointer-events: none;
-    transition: opacity 0.3s ease;
-    z-index: 2000;
-  }
-
-  .menu-overlay.active {
-    opacity: 1;
-    pointer-events: all;
-  }
-
-  /* 🧊 sliding menu */
   .menu-vertical {
-    position: fixed;
-    top: 0;
+    left: auto;
     right: 0;
-    height: 100vh;
-    width: 220px;
 
-    background: rgba(0, 0, 0, 0.9);
+    width: 220px;
+    height: 100vh;
+
+    background: rgba(0, 0, 0, 0.95);
     backdrop-filter: blur(10px);
 
-    transform: translateX(100%);
+    transform: translateX(110%);
     transition: transform 0.35s ease;
 
     z-index: 2500;
@@ -789,13 +724,28 @@ div#content div.rightbox{
     transform: translateX(0);
   }
 
-  /* menu links */
+  /* menu links mobile */
   .menu-vertical li a {
     font-size: 24px;
     padding: 15px 20px;
   }
 
+  /* éviter scroll quand menu ouvert */
+  body.menu-open {
+    overflow: hidden;
+  }
 }
+
+/* effet glow global (desktop + mobile) */
+.menu-vertical {
+  box-shadow: -10px 0 30px rgba(0, 204, 255, 0.2);
+}
+
+.menu-vertical.active {
+  box-shadow: -10px 0 40px rgba(0, 204, 255, 0.6);
+}
+  
+
  /* STEP 1 MOBILE Adaptation for images  */
 img {
   max-width: 100%;
@@ -857,7 +807,7 @@ body {
 /* PHOTO HEADER PORTFLIO*/
 .hero {
   width: 100%;
-  height: 100vh; /* prend tout l��cran */
+  height: 100vh; /* prend tout l’écran */
   position: relative;
   overflow: hidden;
 }
@@ -894,7 +844,7 @@ body {
 
 body {
   margin: 0;
-  background: transparent; /* ou enl�ve carr�ment la ligne */
+  background: transparent; /* ou enlève carrément la ligne */
 }
 
 .hero {

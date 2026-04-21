@@ -523,21 +523,29 @@ elements.forEach(el => observer.observe(el));
 <!-- Script for burger MENU MOBILE responsive -->
 	
 <script>
-const burger = document.querySelector(".burger");
-const menu = document.querySelector(".menu-vertical");
-const overlay = document.querySelector(".menu-overlay");
+document.addEventListener("DOMContentLoaded", () => {
 
-burger.addEventListener("click", () => {
-  menu.classList.toggle("active");
-  overlay.classList.toggle("active");
-});
+  const burger = document.querySelector(".burger");
+  const menu = document.querySelector(".menu-vertical");
+  const overlay = document.querySelector(".menu-overlay");
 
-/* click outside = close */
-overlay.addEventListener("click", () => {
-  menu.classList.remove("active");
-  overlay.classList.remove("active");
+  if (!burger || !menu || !overlay) {
+    console.log("Burger system missing elements");
+    return;
+  }
+
+  burger.addEventListener("click", () => {
+    menu.classList.toggle("active");
+    overlay.classList.toggle("active");
+  });
+
+  overlay.addEventListener("click", () => {
+    menu.classList.remove("active");
+    overlay.classList.remove("active");
+  });
+
 });
-</script>	
+</script>
 	
 	<!-- Script for burger MENU MOBILE responsive FIN -->
 

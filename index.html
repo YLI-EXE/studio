@@ -4,7 +4,6 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">	
 <title>👽Yli's website</title>
-	<meta charset="utf-8"> 
 	<link rel="stylesheet" type="text/css" href="styles.css">
 	
 </head>
@@ -109,7 +108,6 @@
 	<div class="separator-y2k"></div>
 	  
 	  <!--	cover + text  -->
-	 <div class="cover-section">
 		 
 	
 	<!-- ================= ARTICLE 4 APRIL SETTIMANA SANTA============== -->
@@ -126,10 +124,10 @@
   <!-- BEFORE / AFTER SLIDER -->
 	
  <div class="ba-wrap">
-  <img class="ba-after" src="SETTIMANA-SANTA-cover-hd-Before-V2.png"="after">
+  <img class="ba-after" src="SETTIMANA-SANTA-cover-hd-Before-V2.png" alt="Settimana Santa - after">
 
   <div class="ba-before">
-    <img src="SETTIMANA-SANTA-cover-hd-.After-test-versions.png">
+    <img src="SETTIMANA-SANTA-cover-hd-.After-test-versions.png" alt="Settimana Santa - before">
   </div>
 
   <div class="ba-line"></div>
@@ -149,6 +147,48 @@
 </div>	 
 						 
 <!-- ================= ARTICLE 4 APRIL SETTIMANA SANTA FIN ============ -->
+
+
+<!-- ================= ARTICLE OCTOBER NAVE AMIGA ================= -->
+<div class="cover-section">
+
+  <div class="cover-date">October 2026</div>
+
+  <p class="cover-description">
+    Nave Amiga / Band Shooting
+  </p>
+
+  <!-- Slider Nave Amiga : remplace juste les src par tes photos -->
+  <div class="march-slider">
+    <button class="slider-btn left">◀</button>
+
+    <div class="slider-window">
+      <div class="slider-track">
+        <img src="PHOTO-NAVE-AMIGA-1.jpg" class="march-image" alt="Nave Amiga - photo 1">
+        <img src="PHOTO-NAVE-AMIGA-2.jpg" class="march-image" alt="Nave Amiga - photo 2">
+        <img src="PHOTO-NAVE-AMIGA-3.jpg" class="march-image" alt="Nave Amiga - photo 3">
+      </div>
+    </div>
+
+    <button class="slider-btn right">▶</button>
+  </div>
+
+  <div class="cover-text punk-text">
+    <p>
+      Shooting with Nave Amiga, an experimental metal band.
+    </p>
+
+    <p>
+      Three members of the band in front of my lens: raw textures, dark tones and a lot of noise in the air.
+    </p>
+
+    <p>
+      Experimental, heavy, a bit strange — exactly how I like it.
+    </p>
+  </div>
+
+</div>
+<!-- ================= ARTICLE OCTOBER NAVE AMIGA FIN ================= -->
 					 
 		 
 		 <!-- ================= ARTICLE 19 MARCH ================= -->
@@ -254,37 +294,44 @@ Supernova from London (HC), along with bands and influences from the Belgian har
 		 
 <!-- ⚡ Place your slider JS here, AFTER the HTML above -->
 <script>
-const track = document.querySelector('.slider-track');
-const images = document.querySelectorAll('.slider-track .march-image');
-const btnLeft = document.querySelector('.slider-btn.left');
-const btnRight = document.querySelector('.slider-btn.right');
+// Gère TOUS les sliders .march-slider de la page (Nave Amiga + aura dj, etc.)
+document.querySelectorAll('.march-slider').forEach(slider => {
+  const track = slider.querySelector('.slider-track');
+  const images = slider.querySelectorAll('.march-image');
+  const btnLeft = slider.querySelector('.slider-btn.left');
+  const btnRight = slider.querySelector('.slider-btn.right');
 
-let currentIndex = 0;
+  if (!track || images.length === 0) return;
 
-function updateSlider() {
-  const width = images[0].clientWidth;
-  track.style.transform = `translateX(-${currentIndex * width}px)`;
-}
+  let currentIndex = 0;
 
-// Right arrow: loop to first after last
-btnRight.addEventListener('click', () => {
-  currentIndex = (currentIndex + 1) % images.length;
-  updateSlider();
+  function updateSlider() {
+    const width = images[0].clientWidth;
+    track.style.transform = `translateX(-${currentIndex * width}px)`;
+  }
+
+  // Right arrow: loop to first after last
+  btnRight.addEventListener('click', () => {
+    currentIndex = (currentIndex + 1) % images.length;
+    updateSlider();
+  });
+
+  // Left arrow: loop to last if on first
+  btnLeft.addEventListener('click', () => {
+    currentIndex = (currentIndex - 1 + images.length) % images.length;
+    updateSlider();
+  });
+
+  window.addEventListener('resize', updateSlider);
 });
-
-// Left arrow: loop to last if on first
-btnLeft.addEventListener('click', () => {
-  currentIndex = (currentIndex - 1 + images.length) % images.length;
-  updateSlider();
-});
-
-window.addEventListener('resize', updateSlider);
 </script>
 		 
 		 
 	<!-- ================= ARTICLE 27 JANUARY ================= -->	
 	
-	<div class="cover-date">27 January 2026</div>	 
+<div class="cover-section">
+
+  <div class="cover-date">27 January 2026</div>	 
 		 
   <!-- Description au-dessus de la cover -->
   <p class="cover-description">

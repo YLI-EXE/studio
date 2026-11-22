@@ -1,0 +1,108 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>👽Yli's website — Nave Amiga</title>
+<link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+
+<body>
+
+<!-- 🔥 Y2K BURGER (mobile) -->
+<div class="burger">☰</div>
+<div class="menu-overlay"></div>
+
+<!-- Menu de navigation à gauche (identique à index.html) -->
+<nav class="menu-vertical">
+  <ul>
+    <li><a href="index.html">news</a></li>
+    <li><a href="news.html">intro</a></li>
+    <li><a href="contacts.html">about</a></li>
+    <li class="dropdown cyber">
+      <div class="dropdown-toggle"><span class="angel-icon">✧</span> work</div>
+      <ul class="submenu">
+        <li><a href="ania.html">Ania</a></li>
+        <li><a href="leo.html">Leonardo</a></li>
+        <li><a href="nave-amiga.html">Nave Amiga</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+<div class="parallax">
+  <div class="contenu">
+
+    <div class="cover-section">
+
+      <div class="cover-date">October 2026</div>
+
+      <p class="cover-description">
+        Nave Amiga / Band Shooting
+      </p>
+
+      <div class="cover-text punk-text">
+        <p>
+          Nave Amiga is an experimental metal band. I shot three members of the band in October.
+        </p>
+        <p>
+          Raw textures, colours, red lights and black &amp; white — a little universe between noise and silence.
+        </p>
+      </div>
+
+      <!-- ================= GALERIE PHOTOS ================= -->
+      <!-- La 1re photo (big-photo) s'affiche en grand.
+           Pour ajouter une photo : copie une ligne <img ...> et change le src. -->
+      <div class="march-photos">
+        <img src="nave-amiga-colours.jpg" class="big-photo" alt="Nave Amiga - colours">
+        <img src="nave-amiga-rouge-.jpg" alt="Nave Amiga - rouge">
+        <img src="nave%20a%20miga%20B%26W" alt="Nave Amiga - black and white">
+        <!-- <img src="nave-amiga-4.jpg" alt="Nave Amiga - photo 4"> -->
+        <!-- <img src="nave-amiga-5.jpg" alt="Nave Amiga - photo 5"> -->
+      </div>
+      <!-- ================= GALERIE PHOTOS FIN ================= -->
+
+      <div class="cover-text">
+        <p>
+          <a href="index.html">⟵ Back to news</a>
+        </p>
+      </div>
+
+    </div>
+
+  </div>
+</div>
+
+<footer>
+  <p>Copyright Yli &copy;- 2021-2026 - All rights reserved</p>
+</footer>
+
+<p class="Bienvenue">Feel free to be a weirdo !</p>
+
+<!-- Menu déroulant "work" -->
+<script>
+document.querySelectorAll(".cyber > .dropdown-toggle").forEach(function(toggle) {
+  toggle.addEventListener("click", function(e) {
+    e.preventDefault();
+    this.parentElement.classList.toggle("active");
+  });
+});
+</script>
+
+<!-- Burger menu mobile -->
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const burger = document.querySelector(".burger");
+  const menu = document.querySelector(".menu-vertical");
+  const overlay = document.querySelector(".menu-overlay");
+  if (!burger || !menu || !overlay) return;
+  burger.addEventListener("click", () => {
+    menu.classList.toggle("active");
+    overlay.classList.toggle("active");
+    burger.classList.toggle("active");
+  });
+});
+</script>
+
+</body>
+</html>

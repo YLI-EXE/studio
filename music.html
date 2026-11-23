@@ -1,10 +1,42 @@
 <!doctype html>
-<html>
+<html lang="en">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>👽Yli's website — Music</title>
-<link rel="stylesheet" type="text/css" href="styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>👽Yli's website — Music</title>
+
+  <!-- styles (same as the Ania page) -->
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="ania.css">
+
+  <!-- Mobile safety net: stacks text + photos on small screens -->
+  <style>
+    .split-layout .image-block img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+
+    @media (max-width: 768px) {
+      .split-layout {
+        display: flex !important;
+        flex-direction: column !important;
+      }
+      .split-layout .left-side,
+      .split-layout .right-side {
+        width: 100% !important;
+        max-width: 100% !important;
+      }
+      .split-layout .right-side {
+        order: -1;            /* text first on mobile, photos below */
+      }
+      .split-layout .text-sticky {
+        position: static !important;
+        height: auto !important;
+      }
+    }
+  </style>
 </head>
 
 <body>
@@ -13,14 +45,19 @@
 <div class="burger">☰</div>
 <div class="menu-overlay"></div>
 
-<!-- Menu de navigation à gauche (identique à index.html) -->
+<!-- MENU -->
 <nav class="menu-vertical">
   <ul>
     <li><a href="index.html">news</a></li>
     <li><a href="news.html">intro</a></li>
     <li><a href="contacts.html">about</a></li>
+
     <li class="dropdown cyber">
-      <div class="dropdown-toggle"><span class="angel-icon">✧</span> work</div>
+      <div class="dropdown-toggle">
+        <span class="angel-icon">✧</span>
+        work
+      </div>
+
       <ul class="submenu">
         <li><a href="ania.html">Ania</a></li>
         <li><a href="leo.html">Leonardo</a></li>
@@ -30,56 +67,74 @@
   </ul>
 </nav>
 
-<div class="parallax">
-  <div class="contenu">
 
-    <div class="cover-section">
+<!-- SPLIT LAYOUT -->
+<div class="split-layout">
 
-      <div class="cover-date">October 2026</div>
+  <!-- LEFT SIDE = IMAGES -->
+  <!-- To add a photo: copy one image-block and change the src -->
+  <div class="left-side">
 
-      <p class="cover-description">
-        Nave Amiga / Band Shooting
+    <div class="image-block">
+      <img src="nave-amiga-colours.jpg" alt="Nave Amiga - colours">
+    </div>
+
+    <div class="image-block">
+      <img src="nave-amiga-rouge-.jpg" alt="Nave Amiga - rouge">
+    </div>
+
+    <div class="image-block">
+      <img src="nave%20a%20miga%20B%26W" alt="Nave Amiga - black and white">
+    </div>
+
+  </div>
+
+
+  <!-- RIGHT SIDE = STICKY + SCROLL TEXT -->
+  <div class="right-side">
+
+    <div class="text-sticky">
+
+      <p class="ania-date">October 2026</p>
+
+      <h1>
+        <span>NAVE</span>
+        <span>AMIGA</span>
+      </h1>
+
+      <p class="ania-description">
+        Band shooting with three members of an experimental metal band.
       </p>
 
-      <div class="cover-text punk-text">
-        <p>
-          Nave Amiga is an experimental metal band. I shot three members of the band in October.
-        </p>
-        <p>
-          Raw textures, colours, red lights and black &amp; white — a little universe between noise and silence.
-        </p>
-      </div>
+      <p>
+        Raw textures, colours, red lights and black &amp; white —
+        a little universe between noise and silence.
+      </p>
 
-      <!-- ================= GALERIE PHOTOS ================= -->
-      <!-- La 1re photo (big-photo) s'affiche en grand.
-           Pour ajouter une photo : copie une ligne <img ...> et change le src. -->
-      <div class="march-photos">
-        <img src="nave-amiga-colours.jpg" class="big-photo" alt="Nave Amiga - colours">
-        <img src="nave-amiga-rouge-.jpg" alt="Nave Amiga - rouge">
-        <img src="nave%20a%20miga%20B%26W" alt="Nave Amiga - black and white">
-        <!-- <img src="nave-amiga-4.jpg" alt="Nave Amiga - photo 4"> -->
-        <!-- <img src="nave-amiga-5.jpg" alt="Nave Amiga - photo 5"> -->
-      </div>
-      <!-- ================= GALERIE PHOTOS FIN ================= -->
+      <div class="further-review">
 
-      <div class="cover-text">
+        <p>
+          <strong>Nave Amiga</strong> is an experimental metal band. In October I shot three of its members, looking for images as heavy and strange as their sound.
+        </p>
+
+        <p>
+          Between colour, red light and black &amp; white, each picture plays with contrast, tension and atmosphere.
+        </p>
+
         <p>
           <a href="index.html">⟵ Back to news</a>
         </p>
+
       </div>
 
     </div>
 
   </div>
+
 </div>
 
-<footer>
-  <p>Copyright Yli &copy;- 2021-2026 - All rights reserved</p>
-</footer>
 
-<p class="Bienvenue">Feel free to be a weirdo !</p>
-
-<!-- Menu déroulant "work" -->
+<!-- Dropdown "work" -->
 <script>
 document.querySelectorAll(".cyber > .dropdown-toggle").forEach(function(toggle) {
   toggle.addEventListener("click", function(e) {
